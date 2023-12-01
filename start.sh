@@ -4,7 +4,7 @@ source venv/bin/activate
 
 alias aoc="python solution.py < in.txt"
 
-function aoc-load () {
+function aoc_load () {
     if [ $1 ]
     then
         curl --cookie "session=$AOC_COOKIE" https://adventofcode.com/$1/day/$2/input > in.txt
@@ -13,16 +13,16 @@ function aoc-load () {
     fi
 }
 
-function aoc-go () {
+function aoc_go () {
     today=$(date +%d)
-    if [ ! -d "$today" ]; then
+    if [ ! -d $today ]; then
         mkdir $today
         cd $today
-        aoc-load
+        aoc_load
         echo "with open(0) as file:\n    f = file.read().splitlines()" > solution.py
     else
         cd $today
     fi
 }
 
-aoc-go
+aoc_go
