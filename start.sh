@@ -19,7 +19,7 @@ function aoc-go () {
         mkdir $today
         cd $today
         aoc-load
-        echo "f = open(0).read().splitlines()" > solution.py
+        echo "with open(0) as file:\n    f = file.read().splitlines()" > solution.py
     else
         cd $today
     fi

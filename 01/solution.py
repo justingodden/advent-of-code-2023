@@ -1,6 +1,7 @@
 import re
 
-f = open(0).read().splitlines()
+with open(0) as file:
+    f = file.read().splitlines()
 
 c = 0
 
